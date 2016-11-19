@@ -52,12 +52,12 @@ if __name__ == "__main__":
 		while ang < 89:
 			ang = ang + 1
 			print "ang:", ang
-			proj1.set_angle(ang)
+			proj1.set_angle(math.radians(ang))
 			res = proj1.run_sim()
 			range.append(max(zip(*res)[0]))
 			print "range:", max(zip(*res)[0]), "meters"
 		print "max range is", max(range), "at", range.index(max(range)) + 1, "degrees"
-		proj1.set_angle(range.index(max(range)) + 1)
+		proj1.set_angle(math.radians(range.index(max(range)) + 1))
 
 	elif int(input["mode"]) == 1:
 		pass

@@ -33,6 +33,12 @@ class BallisticObject:
         self.velX = (math.cos(angle) * velI)
         self.velY = (math.sin(angle) * velI)
 
+        self.initialConditions = numpy.zeros(4)
+        self.initialConditions[0] = 0
+        self.initialConditions[1] = self.velX
+        self.initialConditions[2] = self.posY
+        self.initialConditions[3] = self.velY
+
     def traj_func(self, state, time):
         """ODE function for projectile motion"""
         f = numpy.zeros(4)
